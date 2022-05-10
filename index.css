@@ -4,9 +4,6 @@
     box-sizing: border-box;
 }
 
-/* font-family: 'Inter', sans-serif;
-font-family: 'Karla', sans-serif; */
-
 body {
     background-color: #1C1C1C;
     display: flex;
@@ -25,18 +22,20 @@ main {
     padding: 40px 20px;
 }
 
-.container h1 {
-    font-family: 'Karla', sans-serif;
-    font-size: 40px;
-    line-height: 40px;
-    margin: 25px 0 10px 0;
-}
-
-.container h1 span {
+span {
+    display: block;
     color: #10B981;
 }
 
-.container p {
+h1 {
+    margin-bottom: 0;
+    line-height: 1;
+    font-family: 'Karla', sans-serif;
+    font-size: 40px;
+    margin: 25px 0 10px 0;
+}
+
+p {
     color: #6B7280;
     font-family: 'Inter', sans-serif;
     font-size: 20px;
@@ -45,47 +44,79 @@ main {
     margin-bottom: 40px;
 }
 
-.btn {
-    display: flex;
-    align-items: center;
-    background: #10B981;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
-    color: white;
-    height: 42px;
+button, input {
+    border-radius: 6px;
     border: none;
-    border-radius: 10px;
-    padding: 0 16px 0 5px;
-    cursor: pointer;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    color: #fff;
     font-size: 16px;
+    line-height: 24px;
+    background: #10B981;
+    padding: 9px 17px 9px 15px;
+    cursor: pointer;
+}
+
+input {
+    margin-top: 15px;
+}
+
+.icon {  
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+    vertical-align: middle;
+    margin-right: .5em;
+}
+
+.icon:hover {
+    background-color: #496d61;
+}
+
+#passwords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4%;
+    border-top: 1px solid #2F3E53;
+    padding-top: 20px;
+}
+
+#passwords .btn {
+    flex: 1 1 48%;
+    border-radius: 6px;
+    background: #273549;
+    background-blend-mode: overlay;
+    text-align: center;
+    line-height: 2.5em;
+    margin: 0;
+    margin-bottom: 1em;
+    box-sizing: border-box;
 }
 
 .btn:hover {
-    background-color: #496d61;;
-}
-
-.generate {
-    margin: 0 10px;
-}
-
-.card {
-    display: grid;
-    grid-column: 2;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    border-top: 1px solid #D5D4D8;
-}
-
-.password {
-    justify-content: center;
-    height: 42px;
-    padding: 0 17px;
-    box-shadow: none;
-    background-color: #273549;
-    color: #10B981;
-}
-
-.password:hover {
     background-color: #57616e;
+    cursor: pointer;
+}
+
+@media (max-width: 760px) {
+    .buttons {
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+    }
+    #passwords {
+        border-top: 1px solid #2F3E53;
+        padding-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+        gap: 24px 27px;
+    }
+    .btn {
+        font-weight: 500;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
 }
