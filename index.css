@@ -100,8 +100,9 @@ input {
 
 footer {
     text-align: center;
-    padding-top: 50px;
+    margin-top: 70px;
     font-weight: 500;
+    background-color: #10B981;
 }
 
 footer a {
@@ -110,7 +111,7 @@ footer a {
 }
 
 footer a:hover {
-    color: #10B981;
+    color: #ECFDF5;
 }
 
 @media (max-width: 760px) {
