@@ -3,7 +3,7 @@ let character = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!
 
 //select DOM element
 let passwordEl = document.querySelectorAll(".btn")
-let copyEl = document.getElementById("copy");
+let pwLength = document.getElementById("password-length")
 
 let passwordLength = 10
 
@@ -11,7 +11,14 @@ let passwordLength = 10
 function renderPasswords() {
     for (i = 0; i < passwordEl.length; i++) {
         passwordEl[i].classList.remove(".btn");
-        passwordEl[i].value = generatePassword(document.getElementById("password-length").value);
+        
+        //check if pwLength.value is more than 10 or less than 5, if it's less than 5 it will be back to 5 and if it is more than 10 it will be 10.
+        if(pwLength.value > 10){
+            pwLength.value = 10
+        }else if(pwLength.value < 5){
+            pwLength.value = 5
+        }
+        passwordEl[i].value = generatePassword(pwLength.value);
         passwordEl[i].innerHTML = passwordEl[i].value
     }
 }
