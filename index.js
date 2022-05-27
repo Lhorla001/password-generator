@@ -37,3 +37,22 @@ function generatePassword(passwordLength) {
     return password;
 }
 
+//copy passwords to clipboard
+const copy = function() {
+    copyToClipboard(this.innerHTML)
+}
+  document.getElementById('copy1').onclick = copy;
+  document.getElementById('copy2').onclick = copy;
+  document.getElementById('copy3').onclick = copy;
+  document.getElementById('copy4').onclick = copy;
+
+
+function copyToClipboard(text) {
+    var sampleTextarea = document.createElement("textarea");
+    document.body.appendChild(sampleTextarea);
+    sampleTextarea.value = text; //save main text in it
+    sampleTextarea.select(); //select textarea content
+    document.execCommand("copy");
+    document.body.removeChild(sampleTextarea);
+}
+
