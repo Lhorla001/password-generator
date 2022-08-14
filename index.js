@@ -52,7 +52,7 @@ function copyToClipboard(text) {
     document.body.appendChild(sampleTextarea);
     sampleTextarea.value = text; //save main text in it
     sampleTextarea.select(); //select textarea content
-    document.execCommand("copy");
+    document.execCommand("copy"); //this function is deprecated, let's try to update it
     alert("Password copied to clipboard!")
     document.body.removeChild(sampleTextarea);
 }
